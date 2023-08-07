@@ -5,7 +5,7 @@ from sqlalchemy import (Column,
                         Float)
 
 class table_test(Base):
-    __tablename__ = "test postgres"
+    __tablename__ = "test table"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     column_str = Column(String)
