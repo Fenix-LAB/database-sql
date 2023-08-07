@@ -78,6 +78,6 @@ SELECT * <"FROM table_name">;
 Para borrar una tabla se usa:
 
 ```bash
-DROP TABLE <table_name>;
+DROP TABLE <"table_name">;
 ```
 

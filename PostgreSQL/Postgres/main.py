@@ -57,6 +57,7 @@ def update_data(id: int, c_str: str, c_int: int, c_float: float):
     if not data: # Si no existe el dato
         print("No existe el dato") # Imprimir un mensaje
     if data:
+        pass
         # TODO Actualizar el dato
         # print(f'Dato obtenido: {data}')
         # data.column_str = c_str # Actualizar el dato
