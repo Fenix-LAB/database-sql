@@ -1,10 +1,10 @@
-from config.database import base
+from config.database import Base
 from sqlalchemy import (Column,
                         Integer,
                         String,
                         Float)
 
-class table_test(base):
+class table_test(Base):
     __tablename__ = "test postgres"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
