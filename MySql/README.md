@@ -2,7 +2,7 @@
 
 ### Documentacion de la imagen de TimescaleDB:
 
-https://hub.docker.com/_/postgres
+https://hub.docker.com/_/mysql
 
 ### Docker run
 
@@ -10,11 +10,11 @@ Correr en modo deamon
 
 ```bash
 docker run -d \
---name my_base_timescaledb \
+--name my_base_mysql \
 -p 5432:5432 \
--e POSTGRES_PASSWORD=password \
--v ${PWD}:/home/postgres/pgdata/data \
-postgres
+-e MYSQL_PASSWORD=password \
+-v ${PWD}:/home/mysql/msdata/data \
+timescale/timescaledb:latest-pg13
 ```
 
 ### Entrar en el contenedor 
