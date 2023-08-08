@@ -14,6 +14,17 @@ de las bases de datos y sistemas de gestión de información.
 
 """
 
+# def get_db(): 
+#     """
+#     Función para obtener una sesión con la base de datos 
+
+#     """
+#     try:
+#         db = Session() # Crear una sesión con la base de datos
+#         yield db # yield es como un return pero no termina la función
+#     finally:
+#         db.close() # Cerrar la sesión con la base de datos
+
 def post_data(c_str: str, c_int: int, c_float: float):
     """
     Función para insertar datos en la base de datos
@@ -58,18 +69,18 @@ def update_data(id: int, c_str: str, c_int: int, c_float: float):
         print("No existe el dato") # Imprimir un mensaje
     if data:
         pass
-        # TODO Actualizar el dato
         # print(f'Dato obtenido: {data}')
-        # data.column_str = c_str # Actualizar el dato
-        # data.column_int = c_int # Actualizar el dato
-        # data.column_float = c_float # Actualizar el dato
-        # db.commit() # Confirmar los cambios para que se guarden en la base de datos
-        # print(f'Dato actualizado: {data}') # Imprimir el dato
+        data.column_str = c_str # Actualizar el dato
+        data.column_int = c_int # Actualizar el dato
+        data.column_float = c_float # Actualizar el dato
+        db.commit() # Confirmar los cambios para que se guarden en la base de datos
+        db.refresh(data) # Actualizar la sesión con los cambios
+        print(f'Dato actualizado: {data}') # Imprimir el dato
 
 if __name__ == "__main__":
     # En este momento se puede consultar la base de datos en postgres y verificar que se creó la tabla
     Base.metadata.create_all(bind=engine) # Crear la base de datos
-    post_data("chris", 9, 9.5) # Insertar datos en la base de datos
+    post_data("rgrwgrg", 9, 9.5) # Insertar datos en la base de datos
     get_all_data() # Consultar todos los datos de la base de datos
     get_data_by_id(1) # Consultar undato de la base de datos
-    # update_data(1, "chris", 10, 10.0) # Actualizar un dato de la base de datos
+    update_data(2, "chris", 10, 10.0) # Actualizar un dato de la base de datos
